@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <title>Minhas Tarefas - Todo List</title>
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #1e1b4b);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 28px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    width: 90%;
+    max-width: 500px;
+}
+
+h2 { 
+    text-align: center; 
+    font-weight: 700; 
+    text-transform: uppercase;
+    letter-spacing: 4px; 
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #fff, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+input {
+    flex: 1;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    outline: none;
+}
+
+.btn-add {
+    padding: 14px 28px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 14px;
+    color: #0f172a;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-add:hover {
+    transform: scale(1.05);
+    background: #7dd3fc;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+}
+.btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 30px auto 0;
+    color: rgba(255, 255, 255, 0.5); /* Cor discreta */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.btn-logout:hover {
+    color: #f87171;
+    transform: translateY(-1px);
+}
+
+.btn-logout i {
+    font-size: 16px;
+}
+
+/* Itens da Lista */
+.task-item {
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.task-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateX(8px);
+}
+
+.btn-delete {
+    background: rgba(248, 113, 113, 0.15);
+    border: none;
+    color: #f87171;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background: #f87171;
+    color: #fff;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>MINHAS TAREFAS</h2>
+        
+        <div class="input-group">
+            <input type="text" id="task-title" placeholder="Digite sua Tarefa">
+            <button class="btn-add" onclick="criarTarefa()">ADICIONAR</button>
+        </div>
+
+        <div id="lista-tarefas">
+            </div>
+
+        <a href="#" class="btn-logout" onclick="logout()">
+    <i class="fas fa-sign-out-alt"></i> Sair da conta
+</a>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Carrega as tarefas assim que a página abrir
+        window.onload = buscarTarefas;
+    </script>
+</body>
+</html>

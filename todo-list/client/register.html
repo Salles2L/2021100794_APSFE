@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+    body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at bottom right, #1e2a4a, #0f172a);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 40px;
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 420px;
+}
+
+h2 { 
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #fff, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-group { margin-bottom: 15px; }
+
+label { display: block; margin-bottom: 8px; font-size: 13px; color: #94a3b8; }
+
+input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #38bdf8;
+    outline: none;
+}
+
+
+.btn-register {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #3a7bd5, #00d2ff) !important;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px -5px rgba(0, 210, 255, 0.4);
+}
+
+.btn-register:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 25px -5px rgba(0, 210, 255, 0.6);
+}
+
+
+.footer-text {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #cbd5e1; 
+}
+
+.highlight-link {
+    color: #00d2ff !important; 
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.highlight-link:hover {
+    text-decoration: underline;
+}
+
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    box-sizing: border-box;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>APS - Cadastro</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Criar Conta</h2>
+        <div class="form-group">
+            <input type="text" id="reg-name" placeholder="Nome">
+        </div>
+        <div class="form-group">
+            <input type="email" id="reg-email" placeholder="E-mail">
+        </div>
+        <div class="form-group">
+            <input type="password" id="reg-password" placeholder="Senha">
+        </div>
+        
+        <button class="btn-register" onclick="registrar()">Cadastrar</button>
+        
+        <p class="footer-text">
+            Já tem uma conta? <a href="index.html" class="highlight-link">Faça login</a>
+        </p>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
