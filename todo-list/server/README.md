@@ -3,6 +3,7 @@ To-Do LIST
 Este projeto consiste em uma aplicação de lista de tarefas (To-do List) dividida em uma arquitetura Cliente-Servidor.
 
 📁 Estrutura do Projeto
+
 /client: Contém os arquivos do frontend (HTML, CSS e JavaScript).
 
 /server: Contém a API desenvolvida em Node.js e a lógica do backend.
